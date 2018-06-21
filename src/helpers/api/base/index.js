@@ -12,9 +12,7 @@ export default class API {
     this.axios = instance();
   }
   // eslint-disable-next-line
-  get(resource = '', config = {}) {
-    const url = 'http://172.20.0.3/prestacao-contas/planilha-aprovacao/get?idPronac=132451&idPlanilhaItem=130&produto=0&uf=SP&idmunicipio=355030';
-
+  get(url, resource = '', config = {}) {
     return this.axios.get(url, Object.assign({}, defaultConfig(), config));
   }
 }

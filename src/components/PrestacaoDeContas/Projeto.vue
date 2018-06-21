@@ -34,11 +34,11 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Projeto',
   created() {
-    this.fetchComprovantes();
+    this.buscaProjeto();
   },
   methods: {
     ...mapActions({
-      fetchComprovantes: 'prestacaoDeContas/default',
+      buscaProjeto: 'prestacaoDeContas/default',
     }),
     formatValues(value) {
       if (value === undefined) {
@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      projeto: 'prestacaoDeContas/default',
+      projeto: 'prestacaoDeContas/buscaProjeto',
     }),
   },
 };

@@ -1,1 +1,2 @@
-export default 'SET_PROJETO';
+export const SET_PROJETO = 'SET_PROJETO';
+export const SET_COMPROVANTE = 'SET_COMPROVANTE';
