@@ -1,1 +1,1 @@
-export default state => state.categories;
+export default state => state.comprovantes;

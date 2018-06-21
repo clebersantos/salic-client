@@ -6,7 +6,7 @@ export const state = {
 
 export const mutations = {
   // eslint-disable-next-line
-  [types.default](state, categories) {
-    state.categories = categories;
+  [types.default](state, comprovantes) {
+    state.comprovantes = comprovantes;
   },
 };

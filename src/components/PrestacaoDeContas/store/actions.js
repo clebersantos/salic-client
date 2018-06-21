@@ -1,8 +1,8 @@
-import CategoryAPI from '@/helpers/api/Category';
+import PrestacaoDeContasAPI from '@/helpers/api/PrestacaoDeContas';
 
 import * as types from './types';
 
-const categoryAPI = new CategoryAPI('category');
+const prestacaoDeContasAPI = new PrestacaoDeContasAPI('comprovantes');
 
-export default ({ commit }) => categoryAPI.fetchCategories()
+export default ({ commit }) => prestacaoDeContasAPI.fetchComprovantes()
   .then(response => commit(types.default, response.data));

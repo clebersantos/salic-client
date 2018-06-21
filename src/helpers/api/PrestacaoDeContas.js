@@ -1,6 +1,6 @@
 import API from './base';
 
-export default class Category extends API {
+export default class PrestacaoDeContas extends API {
   constructor(path) {
     // config.path = 'categories';
     const config = {};
@@ -9,7 +9,7 @@ export default class Category extends API {
     super(config);
   }
 
-  fetchCategories() {
-    return this.get('index');
+  fetchComprovantes() {
+    return this.get('prestacao-contas');
   }
 }

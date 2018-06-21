@@ -1,16 +1,16 @@
 <template>
   <div align="left">
-    <ListCategories></ListCategories>
+    <ListComprovantes></ListComprovantes>
   </div>
 </template>
 
 <script>
-import ListCategories from '@/components/Categories/ListCategories';
+import ListComprovantes from '@/components/PrestacaoDeContas/ListComprovantes';
 
 export default {
   name: 'index',
   components: {
-    ListCategories,
+    ListComprovantes,
   },
 };
 </script>

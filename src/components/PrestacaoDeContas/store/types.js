@@ -1,1 +1,1 @@
-export default 'SET_CATEGORIES';
+export default 'SET_COMPROVANTES';
