@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import helloWorld from './components/HelloWorld/store';
+import prestacaoDeContas from './components/PrestacaoDeContas/store';
 
 Vue.use(Vuex);
 
@@ -9,7 +9,7 @@ const debug = process.env.NODE_ENV !== 'production' || process.env.NODE_ENV !== 
 
 export default new Vuex.Store({
   modules: {
-    helloWorld,
+    prestacaoDeContas,
   },
   strict: debug,
 });
