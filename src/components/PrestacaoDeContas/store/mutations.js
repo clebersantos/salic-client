@@ -1,7 +1,7 @@
 import * as types from './types';
 
 export const state = {
-  categories: [],
+  comprovantes: [],
 };
 
 export const mutations = {

@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h1>oiiiii</h1>
     <div v-for="comprovante in comprovantes" v-bind:key="comprovante.id" class="">
-      <p>{{comprovante.name}}</p>
+      <p>{{comprovante}}</p>
       <br>
     </div>
   </div>
@@ -18,12 +17,12 @@ export default {
   },
   methods: {
     ...mapActions({
-      fetchComprovantes: 'comprovantes/default',
+      fetchComprovantes: 'prestacaoDeContas/default',
     }),
   },
   computed: {
     ...mapGetters({
-      categories: 'comprovantes/default',
+      comprovantes: 'prestacaoDeContas/default',
     }),
   },
 };

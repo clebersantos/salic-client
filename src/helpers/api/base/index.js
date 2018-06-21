@@ -1,9 +1,8 @@
 import instance from './instance';
-// import Session from '@/helpers/session';
-//
-// const defaultConfig = () => ({
-//   headers: Object.assign({}, Session.auth.get()),
-// });
+
+const defaultConfig = () => ({
+  headers: Object.assign({}, { 'Cookie': 'PHPSESSID=f35d28dcf98f13fded03d151ae088664' }),
+});
 
 export default class API {
   constructor(config = {}) {
@@ -13,24 +12,8 @@ export default class API {
   }
 
   get(resource = '', config = {}) {
-    console.log(this.path);
-    console.log(resource);
-    console.log(config);
+    const url = 'http://172.20.0.3/prestacao-contas/planilha-aprovacao/get?idPronac=132451&idPlanilhaItem=130&produto=0&uf=SP&idmunicipio=355030'
 
-    return this.axios.get(`${this.path}/${resource}`, Object.assign({}, config));
+    return this.axios.get(url, Object.assign({}, defaultConfig(), config));
   }
-
-  // put(resource = '', data, config = {}) {
-  //   return this.axios.put(`${this.path}/${resource}`, data, Object.assign({}, config));
-  // }
-  //
-  // post(data, config = {}, resource = '') {
-  //   const path = `${this.path}/${resource}`;
-  //
-  //   return this.axios.post(path, data, Object.assign({}, config));
-  // }
-  //
-  // delete(resource = '', config = {}) {
-  //   return this.axios.delete(`${this.path}/${resource}`, Object.assign({}, config));
-  // }
 }

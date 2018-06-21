@@ -13,15 +13,5 @@ export default () => {
     { baseURL: API_ENDPOINT },
   );
 
-  instance.interceptors.response.use(response => response,
-    (error) => {
-      if (error.response.status === 401) {
-        window.location.href = process.env.APP_LOGIN_ENDPOINT;
-        return error;
-      }
-
-      return Promise.reject(error);
-    });
-
   return instance;
 };
