@@ -13,7 +13,7 @@ export default new Router({
       component: HelloWorld,
     },
     {
-      path: '/',
+      path: '/prestacao_de_contas',
       name: 'PrestacaoDeContas',
       component: PrestacaoDeContas,
     },
