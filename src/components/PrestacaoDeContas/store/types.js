@@ -1,1 +1,1 @@
-export default 'SET_COMPROVANTES';
+export default 'SET_PROJETO';

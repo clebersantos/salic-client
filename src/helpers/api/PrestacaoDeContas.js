@@ -9,7 +9,7 @@ export default class PrestacaoDeContas extends API {
     super(config);
   }
 
-  fetchComprovantes() {
+  buscaProjeto() {
     return this.get('prestacao-contas');
   }
 }

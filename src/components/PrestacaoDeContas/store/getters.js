@@ -1,1 +1,1 @@
-export default state => state.comprovantes;
+export default state => state.projeto;
