@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      buscaProjeto: 'prestacaoDeContas/default',
+      buscaProjeto: 'prestacaoDeContas/buscaProjeto',
     }),
     formatValues(value) {
       if (value === undefined) {
@@ -52,20 +52,22 @@ export default {
       return this.formatValuesWithCents(value);
     },
     formatValuesWithoutCents(value) {
-      const valueWithCents = value.concat('.00');
-      const valueChangedPointByComma = valueWithCents.replace('.', ',');
-      const result = valueChangedPointByComma.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      const valueWithCents = value.concat(',00');
+      const result = valueWithCents.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
       return result;
     },
     formatValuesWithCents(value) {
-      const valueChangedPointByComma = value.replace('.', ',');
+      const valueParsedToFloat = parseFloat(value).toFixed(2);
+      const valueParsedToString = valueParsedToFloat.toString();
+      const valueChangedPointByComma = valueParsedToString.replace('.', ',');
       const result = valueChangedPointByComma.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
       return result;
     },
   },
   computed: {
     ...mapGetters({
-      projeto: 'prestacaoDeContas/buscaProjeto',
+      projeto: 'prestacaoDeContas/projeto',
     }),
   },
 };
