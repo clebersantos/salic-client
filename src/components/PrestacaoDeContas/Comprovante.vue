@@ -26,20 +26,20 @@
               </tr>
               <tr>
                 <th>Dt. Emiss&atilde;o do comprovante de despesa</th>
-                <td>{{dataEmissaoComprovante}}</td>
+                <td>{{formatDate(comprovante.dataEmissaoComprovante)}}</td>
                 <th>Forma de Pagamento</th>
                 <td>{{comprovante.tpFormaDePagamento}}</td>
                 <th>Data do Pagamento</th>
-                <td>{{dataPagamento.format('DD/MM/Y')}}</td>
+                <td>{{formatDate(comprovante.dataPagamento)}}</td>
                 <th>N&ordm; Documento Pagamento</th>
                 <td>{{comprovante.nrDocumentoDePagamento}}</td>
               </tr>
               <tr>
                 <th>Valor</th>
-                <td>R$  {{valor}}</td>
+                <td>R$ {{formatValue(comprovante.vlComprovacao)}}</td>
                 <th>Arquivo</th>
                 <td colspan="5">
-                  <a :href="'/upload/abrir/id/' + comprovante.idArquivo">
+                  <a :href="'http://172.20.0.3/upload/abrir/id/' + comprovante.idArquivo">
                     {{comprovante.nmArquivo}}
                   </a>
                 </td>
@@ -80,14 +80,11 @@ export default {
 
       return comprovante.CNPJCPF.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
     },
-    dataEmissaoComprovante() {
-      return moment(this.dados.dtEmissao).format('DD/MM/Y');
+    formatDate(date) {
+      return moment(date).format('DD/MM/Y');
     },
-    dataPagamento() {
-      return moment(this.dados.dtPagamento).format('DD/MM/Y');
-    },
-    valor() {
-      return parseFloat(this.dados.vlComprovacao).toFixed(2);
+    formatValue(value) {
+      return parseFloat(value).toFixed(2);
     },
   },
 };
