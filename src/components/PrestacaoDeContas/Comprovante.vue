@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <div
-    v-for="(comprovante, index) in comprovantes"
-    :key="index"
-    >
-    <div>
-      <b-btn v-b-toggle="'collapse' + index" variant="primary">
-        {{comprovante.Descricao}}
-      </b-btn>
-      <b-collapse :id="`collapse${index}`" class="mt-2">
-        <b-card>
+  <v-expansion-panel>
+    <v-expansion-panel-content v-for="(comprovante, index) in comprovantes" :key="index" expand-icon="mdi-menu-down">
+      <div slot="header">{{comprovante.Descricao}}</div>
+      <v-card>
+        <v-card-text class="grey lighten-3">
           <table class="bordered">
             <tbody>
               <tr>
@@ -52,11 +46,10 @@
               </tr>
             </tbody>
           </table>
-      </b-card>
-    </b-collapse>
-  </div>
-</div>
-</div>
+        </v-card-text>
+      </v-card>
+    </v-expansion-panel-content>
+  </v-expansion-panel>
 </template>
 
 <script>
