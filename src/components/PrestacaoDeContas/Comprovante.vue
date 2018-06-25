@@ -1,6 +1,10 @@
 <template>
   <v-expansion-panel>
-    <v-expansion-panel-content v-for="(comprovante, index) in comprovantes" :key="index" expand-icon="mdi-menu-down">
+    <v-expansion-panel-content
+      v-for="(comprovante, index) in comprovantes"
+      :key="index"
+      expand-icon="mdi-menu-down"
+    >
       <div slot="header">{{comprovante.Descricao}}</div>
       <v-card>
         <v-card-text class="grey lighten-3">
@@ -26,7 +30,7 @@
                 <th>Forma de Pagamento</th>
                 <td>{{comprovante.tpFormaDePagamento}}</td>
                 <th>Data do Pagamento</th>
-                <td>{{dataPagamento}}</td>
+                <td>{{dataPagamento.format('DD/MM/Y')}}</td>
                 <th>N&ordm; Documento Pagamento</th>
                 <td>{{comprovante.nrDocumentoDePagamento}}</td>
               </tr>
