@@ -15,6 +15,8 @@ export const buscaProjeto = ({ commit }) => {
 export const buscaComprovante = ({ commit }) => {
   prestacaoDeContasAPI.buscaComprovante()
     .then((response) => {
+      console.log('asdasdas');
+      console.log(response);
       const comprovante = response.data;
       commit(types.SET_COMPROVANTE, comprovante.data);
     });
