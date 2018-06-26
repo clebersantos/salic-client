@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import BootstrapVue from 'bootstrap-vue';
 import Vuetify from 'vuetify';
 
 import prestacaoDeContas from './components/PrestacaoDeContas/store';
