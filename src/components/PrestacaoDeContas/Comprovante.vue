@@ -5,7 +5,6 @@
     :key="index"
     expand-icon="mdi-menu-down"
     >
-    {{comprovante.stItemAvaliado}}
     <div slot="header">
       <nobr>{{comprovante.Descricao}}</nobr>
       -
