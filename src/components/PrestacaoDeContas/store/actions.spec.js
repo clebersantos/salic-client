@@ -1,21 +1,21 @@
-// import * as actions from './actions';
+import * as actions from './actions';
 
-// describe('AffiliateLogin actions', () => {
-//   let commit;
+describe('PrestacaoDeContas actions', () => {
+  let commit;
 
-//   beforeEach(() => {
-//     commit = jest.fn();
-//   });
+  beforeEach(() => {
+    commit = jest.fn();
+  });
 
-//   describe('setData', () => {
-//     const target = 'test target';
+  describe('buscaProjeto', () => {
+    beforeEach('', () => {
+      actions.buscaProjeto({ commit });
+    });
 
-//     beforeEach(() => {
-//       actions.setData({ commit }, target);
-//     });
+    test('it is commit to buscaProjeto', () => {
+      const projeto = 'projeto';
 
-//     test('commit to SET_DATA with the correct data', () => {
-//       expect(commit).toHaveBeenCalledWith('SET_DATA', target);
-//     });
-//   });
-// });
+      expect(commit).toHaveBeenCalledWith('SET_PROJETO', projeto);
+    });
+  });
+});
