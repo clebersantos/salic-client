@@ -1,6 +1,6 @@
 import * as types from './types';
 
-describe('Prestacao de contas types', () => {
+describe('PrestacaoDeContas types', () => {
   test('SET_PROJETO', () => {
     expect(types.SET_PROJETO).toEqual('SET_PROJETO');
   });
