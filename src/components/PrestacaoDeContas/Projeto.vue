@@ -20,7 +20,7 @@
               <td>R$ {{ formatValues(projeto.vlAprovado) }}</td>
               <th>Valor Comprovado:</th>
               <td>R$ {{ formatValues(projeto.vlComprovado) }}</td>
-              <th>Comprovação Validada:</th>
+              <th>ComprovaÃ§Ã£o Validada:</th>
               <td>R$ {{ formatValues(projeto.ComprovacaoValidada) }}</td>
             </tr>
           </tbody>
@@ -46,7 +46,7 @@
   <td>R$ {{ formatValues(projeto.vlAprovado) }}</td>
   <th>Valor Comprovado:</th>
   <td>R$ {{ formatValues(projeto.vlComprovado) }}</td>
-  <th>Comprovação Validada:</th>
+  <th>Comprovaï¿½ï¿½o Validada:</th>
   <td>R$ {{ formatValues(projeto.ComprovacaoValidada) }}</td>
 </tr>
 </tbody>

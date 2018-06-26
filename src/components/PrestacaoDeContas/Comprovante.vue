@@ -25,19 +25,19 @@
             <tr>
               <th>Comprovante</th>
               <td>{{comprovante.tpDocumento}}</td>
-              <th>N�mero</th>
+              <th>Número</th>
               <td>{{comprovante.nrComprovante}}</td>
               <th>S&eacute;rie</th>
               <td colspan="3">{{comprovante.nrSerie}}</td>
             </tr>
             <tr>
-              <th>Dt. Emiss&atilde;o do comprovante de despesa</th>
+              <th>Dt. Emissão do comprovante de despesa</th>
               <td>{{formatDate(comprovante.dataEmissaoComprovante)}}</td>
               <th>Forma de Pagamento</th>
               <td>{{comprovante.tpFormaDePagamento}}</td>
               <th>Data do Pagamento</th>
               <td>{{formatDate(comprovante.dataPagamento)}}</td>
-              <th>N&ordm; Documento Pagamento</th>
+              <th>Nº Documento Pagamento</th>
               <td>{{comprovante.nrDocumentoDePagamento}}</td>
             </tr>
             <tr>
