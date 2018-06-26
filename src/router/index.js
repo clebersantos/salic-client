@@ -8,11 +8,6 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
-    },
-    {
       path: '/prestacao_de_contas',
       name: 'PrestacaoDeContas',
       component: PrestacaoDeContas,

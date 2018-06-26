@@ -15,8 +15,7 @@ module.exports = {
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   testPathIgnorePatterns: [
-    '<rootDir>/test/e2e',
-    '<rootDir>/node_modules'
+    '<rootDir>/test/e2e'
   ],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   setupFiles: ['<rootDir>/test/unit/setup'],
@@ -26,6 +25,5 @@ module.exports = {
     '!src/main.js',
     '!src/router/index.js',
     '!**/node_modules/**'
-  ],
-  testRegex: 'src/.*\\.spec\\.js$'
+  ]
 }
