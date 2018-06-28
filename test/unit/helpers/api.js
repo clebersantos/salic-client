@@ -1,4 +1,4 @@
-import API from '../../../src/helpers/api/base/index';
+import API from '@/helpers/api/base/index';
  
 let response;
 let error;
