@@ -7,10 +7,9 @@ const prestacaoDeContasAPI = new PrestacaoDeContasAPI('projeto');
 export const buscaProjeto = ({ commit }) => {
   prestacaoDeContasAPI.buscaProjeto()
     .then((response) => {
-      const projeto = response.data;
-      console.log('asdadasd');
-      console.log(projeto);
-      commit(types.SET_PROJETO, projeto.data);
+      const data = response.data;
+      const projeto = data.data;
+      commit(types.SET_PROJETO, projeto);
     });
 };
 
