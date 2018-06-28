@@ -1,13 +1,10 @@
 import * as actions from './actions';
 import * as MockAPI from '../../../../test/unit/helpers/api';
+import PrestacaoDeContasAPI from '@/helpers/api/PrestacaoDeContas';
 
 describe('PrestacaoDeContas actions', () => {
   let commit;
   let mockReponse;
-
-  beforeEach(() => {
-    commit = jest.fn();
-  });
 
   describe('buscaProjeto', () => {
     beforeEach(() => {
@@ -23,6 +20,8 @@ describe('PrestacaoDeContas actions', () => {
         },
       };
 
+      commit = jest.fn();
+
       MockAPI.setResponse(mockReponse);
     });
 
@@ -30,10 +29,49 @@ describe('PrestacaoDeContas actions', () => {
       MockAPI.setResponse(null);
     });
 
-    test('it is commit to buscaProjeto', () => {
+    test('it calls prestacaoDeContasAPI.buscaProjeto', () => {
+      const prestacaoDeContasAPI = new PrestacaoDeContasAPI('projeto');
+      jest.spyOn(prestacaoDeContasAPI, 'buscaProjeto');
       actions.buscaProjeto({ commit });
+      expect(prestacaoDeContasAPI.buscaProjeto).toHaveBeenCalled();
+    });
+
+    test('it is commit to buscaProjeto', (done) => {
       const projeto = mockReponse.data;
+      actions.buscaProjeto({ commit });
+      done();
       expect(commit).toHaveBeenCalledWith('SET_PROJETO', projeto);
+    });
+  });
+
+  describe('buscaComprovante', () => {
+    beforeEach(() => {
+      mockReponse = {
+        data: {
+          comprovante: [
+            {
+              CNPJCPF: '09967852014349',
+              Descricao: 'Hotelaria Accor Brasil SA',
+              Item: 'Hospedagem sem Alimentação',
+            },
+          ],
+        },
+      };
+
+      commit = jest.fn();
+
+      MockAPI.setResponse(mockReponse);
+    });
+
+    afterEach(() => {
+      MockAPI.setResponse(null);
+    });
+
+    test('it is commit to buscaComprovante', (done) => {
+      const comprovante = mockReponse.data;
+      actions.buscaComprovante({ commit });
+      done();
+      expect(commit).toHaveBeenCalledWith('SET_COMPROVANTE', comprovante);
     });
   });
 });
