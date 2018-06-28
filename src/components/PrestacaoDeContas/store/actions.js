@@ -1,8 +1,6 @@
-import PrestacaoDeContasAPI from '@/helpers/api/PrestacaoDeContas';
+import * as prestacaoDeContasAPI from '@/helpers/api/PrestacaoDeContas';
 
 import * as types from './types';
-
-const prestacaoDeContasAPI = new PrestacaoDeContasAPI('projeto');
 
 export const buscaProjeto = ({ commit }) => {
   prestacaoDeContasAPI.buscaProjeto()
