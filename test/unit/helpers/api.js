@@ -1,10 +1,10 @@
-import * as axiosAPI from '../../../../src/helpers/api/base/index';                         
+import API from '../../../src/helpers/api/base/index';
  
 let response;
 let error;
  
 const originalAPI = {
-  get: axiosAPI.get(),
+  get: API.prototype.get,
 };
  
 const getPromise = (currentResponse = response, currentError = error) => {
@@ -38,11 +38,11 @@ const getPromise = (currentResponse = response, currentError = error) => {
 };
  
 export const enable = () => {
-  axiosAPI.get() = () => getPromise();
+  API.prototype.get = () => getPromise();
 };
  
 export const disable = () => {
-  axiosAPI.get() = originalAPI.get;
+  API.prototype.get = originalAPI.get;
 };
  
 export const setResponse = (data) => {

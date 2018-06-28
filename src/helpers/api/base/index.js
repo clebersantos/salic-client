@@ -5,12 +5,14 @@ const defaultConfig = () => ({
   headers: Object.assign({}, { 'Cookie': 'PHPSESSID=f35d28dcf98f13fded03d151ae088664' }),
 });
 
-export const get = (url, config = {}) => {
-  const axios = instance();
-  return axios.get(url, Object.assign({}, defaultConfig(), config));
-};
+export default class API {
+  constructor(config = {}) {
+    this.path = config.path;
 
-export const post = (url, config = {}) => {
-  const axios = instance();
-  return axios.get(url, Object.assign({}, defaultConfig(), config));
-};
+    this.axios = instance();
+  }
+  // eslint-disable-next-line
+  get(url, resource = '', config = {}) {
+    return this.axios.get(url, Object.assign({}, defaultConfig(), config));
+  }
+}
