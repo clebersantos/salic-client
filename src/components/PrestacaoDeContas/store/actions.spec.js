@@ -43,11 +43,11 @@ describe('PrestacaoDeContas actions', () => {
     });
   });
 
-  describe('buscaComprovante', () => {
+  describe('buscaComprovantes', () => {
     beforeEach(() => {
       mockReponse = {
         data: {
-          comprovante: [
+          comprovantes: [
             {
               CNPJCPF: '09967852014349',
               Descricao: 'Hotelaria Accor Brasil SA',
@@ -66,17 +66,17 @@ describe('PrestacaoDeContas actions', () => {
       MockAPI.setResponse(null);
     });
 
-    test('it is commit to buscaComprovante', (done) => {
-      const comprovante = mockReponse.data;
-      actions.buscaComprovante({ commit });
+    test('it is commit to buscaComprovantes', (done) => {
+      const comprovantes = mockReponse.data;
+      actions.buscaComprovantes({ commit });
       done();
-      expect(commit).toHaveBeenCalledWith('SET_COMPROVANTE', comprovante);
+      expect(commit).toHaveBeenCalledWith('SET_COMPROVANTES', comprovantes);
     });
 
-    test('it calls prestacaoDeContasAPI.buscaComprovante', () => {
-      jest.spyOn(prestacaoDeContasAPI, 'buscaComprovante');
-      actions.buscaComprovante({ commit });
-      expect(prestacaoDeContasAPI.buscaComprovante).toHaveBeenCalled();
+    test('it calls prestacaoDeContasAPI.buscaComprovantes', () => {
+      jest.spyOn(prestacaoDeContasAPI, 'buscaComprovantes');
+      actions.buscaComprovantes({ commit });
+      expect(prestacaoDeContasAPI.buscaComprovantes).toHaveBeenCalled();
     });
   });
 });

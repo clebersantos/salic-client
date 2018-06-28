@@ -4,7 +4,7 @@ describe('PrestacaoDeContas Mutations', () => {
   let state;
   let defaultState;
   let projeto;
-  let comprovante;
+  let comprovantes;
 
   beforeEach(() => {
     defaultState = {
@@ -13,7 +13,7 @@ describe('PrestacaoDeContas Mutations', () => {
         Item: '',
         NomeProjeto: '',
       },
-      comprovante: [
+      comprovantes: [
         {
           CNPJCPF: '',
           Descricao: '',
@@ -30,7 +30,7 @@ describe('PrestacaoDeContas Mutations', () => {
       NomeProjeto: 'Criança é Vida - 15 anos',
     };
 
-    comprovante = [
+    comprovantes = [
       {
         CNPJCPF: '09967852014349',
         Descricao: 'Hotelaria Accor Brasil SA',
@@ -44,8 +44,8 @@ describe('PrestacaoDeContas Mutations', () => {
     expect(state.projeto).toEqual(projeto);
   });
 
-  test('SET_COMPROVANTE', () => {
-    mutations.SET_COMPROVANTE(state, comprovante);
-    expect(state.comprovante).toEqual(comprovante);
+  test('SET_COMPROVANTES', () => {
+    mutations.SET_COMPROVANTES(state, comprovantes);
+    expect(state.comprovantes).toEqual(comprovantes);
   });
 });

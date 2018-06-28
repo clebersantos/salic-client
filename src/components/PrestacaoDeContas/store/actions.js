@@ -11,10 +11,10 @@ export const buscaProjeto = ({ commit }) => {
     });
 };
 
-export const buscaComprovante = ({ commit }) => {
-  prestacaoDeContasAPI.buscaComprovante()
+export const buscaComprovantes = ({ commit }) => {
+  prestacaoDeContasAPI.buscaComprovantes()
     .then((response) => {
-      const comprovante = response.data;
-      commit(types.SET_COMPROVANTE, comprovante.data);
+      const comprovantes = response.data;
+      commit(types.SET_COMPROVANTES, comprovantes.data);
     });
 };

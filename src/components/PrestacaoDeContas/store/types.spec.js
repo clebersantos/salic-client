@@ -5,7 +5,7 @@ describe('PrestacaoDeContas types', () => {
     expect(types.SET_PROJETO).toEqual('SET_PROJETO');
   });
 
-  test('SET_COMPROVANTE', () => {
-    expect(types.SET_COMPROVANTE).toEqual('SET_COMPROVANTE');
+  test('SET_COMPROVANTES', () => {
+    expect(types.SET_COMPROVANTES).toEqual('SET_COMPROVANTES');
   });
 });

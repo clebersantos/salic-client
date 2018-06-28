@@ -2,7 +2,7 @@ import * as types from './types';
 
 export const state = {
   projeto: {},
-  comprovante: {},
+  comprovantes: [],
 };
 
 export const mutations = {
@@ -11,7 +11,7 @@ export const mutations = {
     state.projeto = projeto;
   },
   // eslint-disable-next-line
-  [types.SET_COMPROVANTE](state, comprovante) {
-    state.comprovante = comprovante;
+  [types.SET_COMPROVANTES](state, comprovantes) {
+    state.comprovantes = comprovantes;
   },
 };

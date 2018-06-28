@@ -1,2 +1,2 @@
-export const comprovante = state => state.comprovante;
+export const comprovantes = state => state.comprovantes;
 export const projeto = state => state.projeto;

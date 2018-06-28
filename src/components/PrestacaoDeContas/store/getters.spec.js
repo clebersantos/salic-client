@@ -6,7 +6,7 @@ describe('PrestacaoDeContas getters', () => {
   beforeEach(() => {
     state = {
       projeto: {},
-      comprovante: {},
+      comprovantes: [],
     };
   });
 
@@ -15,8 +15,8 @@ describe('PrestacaoDeContas getters', () => {
     expect(result).toEqual(state.projeto);
   });
 
-  test('comprovante', () => {
-    const result = getters.comprovante(state);
-    expect(result).toEqual(state.comprovante);
+  test('comprovantes', () => {
+    const result = getters.comprovantes(state);
+    expect(result).toEqual(state.comprovantes);
   });
 });
