@@ -29,7 +29,7 @@ describe('PrestacaoDeContas actions', () => {
       MockAPI.setResponse(null);
     });
 
-    test('it calls scheduling.groupCategories', () => {
+    test('it calls prestacaoDeContasAPI.buscaProjeto', () => {
       jest.spyOn(prestacaoDeContasAPI, 'buscaProjeto');
       actions.buscaProjeto({ commit });
       expect(prestacaoDeContasAPI.buscaProjeto).toHaveBeenCalled();
@@ -71,6 +71,12 @@ describe('PrestacaoDeContas actions', () => {
       actions.buscaComprovante({ commit });
       done();
       expect(commit).toHaveBeenCalledWith('SET_COMPROVANTE', comprovante);
+    });
+
+    test('it calls prestacaoDeContasAPI.buscaComprovante', () => {
+      jest.spyOn(prestacaoDeContasAPI, 'buscaComprovante');
+      actions.buscaComprovante({ commit });
+      expect(prestacaoDeContasAPI.buscaComprovante).toHaveBeenCalled();
     });
   });
 });
