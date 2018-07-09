@@ -68,16 +68,16 @@ import moment from 'moment';
 
 export default {
   created() {
-    this.buscaComprovante();
+    this.buscaComprovantes();
   },
   computed: {
     ...mapGetters({
-      comprovantes: 'prestacaoDeContas/comprovante',
+      comprovantes: 'prestacaoDeContas/comprovantes',
     }),
   },
   methods: {
     ...mapActions({
-      buscaComprovante: 'prestacaoDeContas/buscaComprovante',
+      buscaComprovantes: 'prestacaoDeContas/buscaComprovantes',
     }),
     formatCpfOrCnpj(comprovante) {
       if (comprovante.CNPJCPF.length > 11) {
